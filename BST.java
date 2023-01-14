@@ -19,6 +19,7 @@ class Node {
 }
 
 public class BST {
+    int size = 0;
 
     public Node insert(Node node, int data) {
 
@@ -31,11 +32,13 @@ public class BST {
         } else if (data > node.data) {
             node.right = insert(node.right, data);
         }
+
         return node;
     }
 
     private Node createNewNode(int data) {
         Node mynode = new Node(data);
+        size += 1;
         return mynode;
     }
 
@@ -48,4 +51,9 @@ public class BST {
         printInorder(node.right);
 
     }
+
+    public int size() {
+        return size;
+    }
+
 }
